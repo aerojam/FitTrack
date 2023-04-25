@@ -1,0 +1,30 @@
+/* 
+  Localizable.strings
+  FitTrack
+
+  Created by=  Martin on 15.04.2023.
+  
+* */
+"Select a measurement"        = "Select a measurement";
+"No measurements"             = "No measurements";
+"New measurement"             = "New measurement";
+"Remove measurement"          = "Remove measurement";
+"Weight:"                     = "Weight:";
+"Cancel"                      = "Cancel";
+"Insert"                      = "Insert";
+"Measurement date:"           = "Measurement date:";
+"Weight:"                     = "Weight:";
+"BMI:"                        = "BMI:";
+"Body fat:"                   = "Body fat:";
+"Muscles:"                    = "Muscles:";
+"Visceral:"                   = "Visceral:";
+"Resting metabolism:"         = "Resting metabolism:";
+"Note:"                       = "Note:";
+"Delete selected measurement?" = "Delete selected measurement?";
+"Delete" = "Delete";
+"Weight" = "Weight";
+"BMI" = "BMI";
+"Body Fat" = "Body Fat";
+"Muscles" = "Muscles";
+"Visceral Fat" = "Visceral Fat";
+"Resting Metabolism" = "Resting Metabolism";

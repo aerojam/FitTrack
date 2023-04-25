@@ -1,0 +1,29 @@
+/* 
+  Localizable.strings
+  FitTrack
+
+  Created by Martin on 15.04.2023.
+  
+*/
+"Select a measurement"        = "Vyberte měření";
+"No measurements"             = "Žádná měření";
+"New measurement"             = "Nové měření";
+"Remove measurement"          = "Odstranit měření";
+"Cancel"                      = "Zrušit";
+"Insert"                      = "Vložit";
+"Measurement date:"           = "Datum měření:";
+"Weight:"                     = "Hmotnost [kg]:";
+"BMI:"                        = "BMI:";
+"Body fat:"                   = "Tělesný tuk [%]:";
+"Muscles:"                    = "Svaly [%]:";
+"Visceral:"                   = "Viscerální tuk:";
+"Resting metabolism:"         = "Klidový metabolismus [kcal]:";
+"Note:"                       = "Poznámka:";
+"Delete selected measurement?"          = "Smazat vybrané měření?";
+"Delete" = "Smazat";
+"Weight" = "Hmotnost";
+"BMI" = "BMI";
+"Body Fat" = "Tělesný tuk";
+"Muscles" = "Svaly";
+"Visceral Fat" = "Viscerální tuk";
+"Resting Metabolism" = "Klidový metabolismus";
