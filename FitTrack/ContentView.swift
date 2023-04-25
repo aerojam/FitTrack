@@ -60,6 +60,7 @@ struct ContentView: View {
                     
                 }
                 .help("New measurement")
+                .keyboardShortcut("n")
                 
                 Button() {
                     isConfirmingDelete = true
@@ -68,6 +69,7 @@ struct ContentView: View {
                 }
                 .help("Remove measurement")
                 .disabled(selectedMeasurement == nil)
+                .keyboardShortcut(.delete)
                 .confirmationDialog("Delete selected measurement?", isPresented: $isConfirmingDelete) {
                     Button("Delete", role: .destructive) {
                         dataModel.removeMeasurement(selectedMeasurement)
