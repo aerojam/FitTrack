@@ -7,12 +7,34 @@
 
 import SwiftUI
 import Charts
+import AppKit
+import UniformTypeIdentifiers
 
-struct ContentView: View {
+@MainActor struct ContentView: View {
     @StateObject var dataModel = MeasurementsModel()
     @State private var selectedMeasurement: Measurement?
     @State private var isShowingAddMeasurement = false
     @State private var isConfirmingDelete = false
+    @State private var isExporting = false
+    
+    func exportData(in fileType: UTType) {
+        let panel = NSSavePanel()
+        panel.title = "Export data"
+        panel.allowedContentTypes = [fileType]
+        
+        if panel.runModal() == .OK {
+            guard let url = panel.url else { return }
+            
+            switch fileType {
+            case .json:
+                dataModel.saveJSON(url)
+            case UTType.commaSeparatedText:
+                dataModel.exportCSV(url)
+            default:
+                print("Unsupported content file")
+            }
+        }
+    }
     
     var body: some View {
         NavigationSplitView {
@@ -57,7 +79,6 @@ struct ContentView: View {
                     isShowingAddMeasurement = true
                 } label: {
                     Label("New measurement", systemImage: "plus")
-                    
                 }
                 .help("New measurement")
                 .keyboardShortcut("n")
@@ -79,6 +100,12 @@ struct ContentView: View {
                 }
             }
         }
+        .onCommand(#selector(AppCommands.exportCSVAction)) { exportData(in: .commaSeparatedText) }
+        .onCommand(#selector(AppCommands.exportJSONAction)) { exportData(in: .json) }
+        .onAppear {
+            selectedMeasurement = dataModel.measurements.last
+        }
+
     }
 }
 

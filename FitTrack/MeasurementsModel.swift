@@ -88,4 +88,29 @@ class MeasurementsModel: ObservableObject {
             }
         }
     }
+    
+    func exportCSV(_ url: URL) {
+        var content = "\u{FEFF}\"date\",\"weight\",\"bmi\",\"bodyFat\",\"muscles\",\"visceral\",\"restingMetabolism\",\"notes\"\n"
+
+        for measurement in measurements {
+            let row = "\(measurement.date),\(measurement.weight),\(measurement.bmi),\(measurement.bodyFat),\(measurement.muscles),\(measurement.visceral),\(measurement.restingMetabolism),\"\(measurement.notes.replacingOccurrences(of: "\"", with: "\"\""))\"\n".replacingOccurrences(of: "\n", with: " ")
+            content += row + "\n"
+        }
+        
+        do {
+            try content.write(to: url, atomically: true, encoding: .utf8)
+        } catch {
+            print("Could not save CSV file: \(error.localizedDescription)")
+        }
+    }
+    
+    func saveJSON(_ url: URL) {
+        do {
+            let encoder = JSONEncoder()
+            let jsonData = try encoder.encode(measurements)
+            try jsonData.write(to: url)
+        } catch {
+            print("Coulud not encode or write JSON data: \(error.localizedDescription)")
+        }
+    }
 }

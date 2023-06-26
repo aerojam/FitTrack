@@ -37,28 +37,7 @@ struct MeasurementView: View {
             
             Text(measurement.notes)
                 .foregroundColor(.secondary)
-                .padding([.top, .bottom])
-            
-//            Group {
-//                Text("\(measurement.date)")
-//                Text("Weight:")
-//                Text("\(measurement.weight)")
-//                Text("BMI:")
-//                Text("\(measurement.bmi)")
-//                Text("Tělesný tuk:")
-//                Text("\(measurement.bodyFat)")
-//                Text("Svaly:")
-//                Text("\(measurement.muscles)")
-//                Text("Viscerální tuk:")
-//            }
-//            Group {
-//                Text("\(measurement.visceral)")
-//                Text("Klidový metabolismus:")
-//                Text("\(measurement.restingMetabolism)")
-//                Text("Poznámka:")
-//                Text(measurement.notes)
-//            }
-            
+                .padding(.top)
         }
     }
 }

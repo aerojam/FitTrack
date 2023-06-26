@@ -33,6 +33,7 @@
 		5B325EAD29D8B03F00CA6170 /* MeasurementsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurementsModel.swift; sourceTree = "<group>"; };
 		5B325EAF29D99FC700CA6170 /* MeasurementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurementView.swift; sourceTree = "<group>"; };
 		5B5BCD8929DF578C00786749 /* AddMeasurementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMeasurementView.swift; sourceTree = "<group>"; };
+		5B6777E92A35EFF8004CAEB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5B7D074629EDCFF2001363C9 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		5B7D074A29F53850001363C9 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,6 +68,7 @@
 		5B325E9B29D89FFC00CA6170 /* FitTrack */ = {
 			isa = PBXGroup;
 			children = (
+				5B6777E92A35EFF8004CAEB4 /* Info.plist */,
 				5B325E9C29D89FFC00CA6170 /* FitTrackApp.swift */,
 				5B325E9E29D89FFC00CA6170 /* ContentView.swift */,
 				5B325EAB29D8A08900CA6170 /* Measurement.swift */,
@@ -322,6 +324,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FitTrack/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -352,6 +355,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FitTrack/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
