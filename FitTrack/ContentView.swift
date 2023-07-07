@@ -16,6 +16,9 @@ import UniformTypeIdentifiers
     @State private var isShowingAddMeasurement = false
     @State private var isConfirmingDelete = false
     @State private var isExporting = false
+    @State private var isShowingErrorMessage = false
+    
+    @State private var errorMessage = ""
     
     func exportData(in fileType: UTType) {
         let panel = NSSavePanel()
@@ -29,10 +32,28 @@ import UniformTypeIdentifiers
             case .json:
                 dataModel.saveJSON(url)
             case UTType.commaSeparatedText:
-                dataModel.exportCSV(url)
+                dataModel.exportCSV(url) { error in
+                    if let error = error {
+                        errorMessage = error.localizedDescription
+                        isShowingErrorMessage.toggle()
+                    } else {
+                        //
+                    }
+                }
             default:
                 print("Unsupported content file")
             }
+        }
+    }
+    
+    func importCSV() {
+        let panel = NSOpenPanel()
+        panel.title = "Import data"
+        panel.allowedContentTypes = [UTType.commaSeparatedText]
+        
+        if panel.runModal() == .OK {
+            guard let url = panel.url else { return }
+            dataModel.importCSV(url)
         }
     }
     
@@ -73,6 +94,11 @@ import UniformTypeIdentifiers
             AddMeasurementView()
                 .environmentObject(dataModel)
         }
+        .alert("Error", isPresented: $isShowingErrorMessage) {
+            //
+        } message: {
+            Text(errorMessage)
+        }
         .toolbar {
             ToolbarItemGroup {
                 Button() {
@@ -98,8 +124,13 @@ import UniformTypeIdentifiers
                     }
                     Button("Cancel", role: .cancel) { }
                 }
+                
+                Button("Import CSV") {
+                    
+                }
             }
         }
+        .onCommand(#selector(AppCommands.importCSVAction)) { importCSV() }
         .onCommand(#selector(AppCommands.exportCSVAction)) { exportData(in: .commaSeparatedText) }
         .onCommand(#selector(AppCommands.exportJSONAction)) { exportData(in: .json) }
         .onAppear {

@@ -36,6 +36,7 @@
 		5B6777E92A35EFF8004CAEB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5B7D074629EDCFF2001363C9 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		5B7D074A29F53850001363C9 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
+		5BB6BD2B2A584C9900501176 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +82,7 @@
 				5B325EA029D89FFD00CA6170 /* Assets.xcassets */,
 				5B325EA529D89FFD00CA6170 /* FitTrack.entitlements */,
 				5B325EA229D89FFD00CA6170 /* Preview Content */,
+				5BB6BD2B2A584C9900501176 /* MyPlayground.playground */,
 			);
 			path = FitTrack;
 			sourceTree = "<group>";
@@ -109,6 +111,8 @@
 			dependencies = (
 			);
 			name = FitTrack;
+			packageProductDependencies = (
+			);
 			productName = FitTrack;
 			productReference = 5B325E9929D89FFC00CA6170 /* FitTrack.app */;
 			productType = "com.apple.product-type.application";
@@ -138,6 +142,8 @@
 				cs,
 			);
 			mainGroup = 5B325E9029D89FFC00CA6170;
+			packageReferences = (
+			);
 			productRefGroup = 5B325E9A29D89FFC00CA6170 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";

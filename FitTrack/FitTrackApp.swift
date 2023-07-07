@@ -15,6 +15,10 @@ struct FitTrackApp: App {
         }
         .commands {
             CommandGroup(before: .saveItem) {
+                Button("Import CSV…") {
+                    NSApp.sendAction(#selector(AppCommands.importCSVAction), to: nil, from: nil)
+                }
+                
                 Menu("Export") {
                     
                     Button("JSON…") {
@@ -31,6 +35,7 @@ struct FitTrackApp: App {
 }
 
 @objc protocol AppCommands {
+    func importCSVAction()
     func exportJSONAction()
     func exportCSVAction()
 }
